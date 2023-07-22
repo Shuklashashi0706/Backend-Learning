@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    height: 50px;
+    width: 50px;
+}
+button{
+    color: aqua;
+    background-color:black;
+    height:70%;
+    width: 130%;
+}
+button:hover{
+    cursor: pointer;
+}

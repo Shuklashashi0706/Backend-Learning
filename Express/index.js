@@ -1,6 +1,7 @@
 import express from "express";
 import path from "path";
 import mongoose from "mongoose";
+import { measureMemory } from "vm";
 const app = express();
 const port = 8000;
 const users = [];
@@ -14,6 +15,14 @@ mongoose
   .catch((e) => {
     console.log(e);
   });
+
+//creating schema
+const messSchema = mongoose.Schema({
+  name: String,
+  email: String,
+});
+//creating model
+const Mssage = mongoose.model("Message", messSchema);
 
 //using middleware
 app.use(express.static(path.join(path.resolve(), "public")));
@@ -31,8 +40,9 @@ app.get("/success", (req, res) => {
   res.render("success");
 });
 
-app.post("/contact", (req, res) => {
-  users.push({ name: req.body.name, email: req.body.email });
+app.post("/contact", async (req, res) => {
+  const { name, email } = req.body;
+  await Mssage.create({ name, email });
   res.redirect("success");
 });
 
