@@ -20,6 +20,3 @@ button{
     height:70%;
     width: 130%;
 }
-button:hover{
-    cursor: pointer;
-}

@@ -9,7 +9,11 @@
 <body>
     <div class="btn">
         <form action="/login" method="post">
-            <button>Login</button>
+            <h1>Login now</h1>
+            <input type="email" name="email" placeholder="email" value="<%= locals.email %>">
+            <input type="password" name="password" id="" placeholder="password">
+            <p class="error"><%= locals.message %></p>
+            <button type="submit">Login</button>
         </form>
     </div>
 </body>
