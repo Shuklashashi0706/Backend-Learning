@@ -1,15 +1,9 @@
 import express from "express";
-import {
-  getAllUsers,
-  getUserbyId,
-  specialFunc,
-  userRegister,
-} from "../controllers/user.js";
+import { getAllUsers, userRegister,userLogin, getMyProfile } from "../controllers/user.js";
 const router = express.Router();
 
 router.post("/new", userRegister);
+router.post("/login",userLogin);
 router.get("/all", getAllUsers);
-router.get("/userid/:id", getUserbyId);
-router.get("/userid/special", specialFunc);
-
+router.route("/me").get(getMyProfile);
 export default router;
