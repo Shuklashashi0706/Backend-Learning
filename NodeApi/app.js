@@ -10,7 +10,7 @@ config({
 });
 //setting middleware
 app.use(express.json());
-app.use(cookieParser);
+app.use(cookieParser());
 
 //using routes
 app.use("/users/api/v1", userRouter);
@@ -18,3 +18,4 @@ app.use("/users/api/v1", userRouter);
 app.get("/", (req, res) => {
   res.send("hi");
 });
+
