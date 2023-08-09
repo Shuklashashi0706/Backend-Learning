@@ -5,5 +5,5 @@ connectDB();
 const port = process.env.PORT;
 
 app.listen(port, (req, res) => {
-  console.log(`Listening at port no: ${port}`);
+  console.log(`Listening at port no: ${port} in ${process.env.NODE_ENV} Mode`);
 });
